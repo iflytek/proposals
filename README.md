@@ -5,6 +5,6 @@
 
 ##  开发工具类
 
-* [proposals](/proposals/flags.md)
+* [flags](/proposals/flags.md)
 
 专注于提供开发人员统一、规范的Python脚本参数解析Lib库
