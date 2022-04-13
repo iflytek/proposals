@@ -24,16 +24,32 @@
 
 * AI服务框架部署初始化: 支持 *docker-compose* , kubernetes 部署
 
-* AI服务框架组件配置、状态管理: 支持实时编辑各个组件需要配置，支持重启停各个组件, 支持各组件部署信息管理(如扩缩容某组件)
-
-* AI能力管理: 支持新增AI能力，能力API设计， AI能力关联API(见详细设计), 能力的上下线
+* 支持APISchema定义
 
 * AI引擎相关功能: 启动AI引擎，AI引擎镜像构建, AI引擎本地仿真
 
 
 
 ### 命令行工具详细设计
-TDO
+
+**asectl**
+
+#### api create
+
+执行 `asectl init -f ai_api.yml`
+
+```yaml
+apiVersion: iflytek.com/v1alpha1
+kind: ApiSchema
+metadata:
+  creationTimestamp: null
+  name: my-api
+spec:
+  #TODO
+      
+     
+
+```
 
 
 
