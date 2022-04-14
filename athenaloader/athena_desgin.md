@@ -15,6 +15,11 @@
 * 根据部署方式不同[见下节],docker-compose 和 kuberentes方式 实际部署架构可能存在不同的组合方式: kubernetes方式可配置使用polaris配置中心，或者使用k8s/configmap
 
 
+## 用户使用流程
+
+![用户流程](usage.png)
+
+
 ## 命令行工具[asectl]设计
 
 
@@ -39,19 +44,22 @@
 执行 `asectl api create -f ai_api.yml`
 
 ```yaml
-region: dx # 配置中心区域
-group: gas # 配置中心group
+apiVersion: iflytek.com/v1alpha1
+kind: ApiSchema
 metadata:
-  serviceName: awake # 服务名
-  projectName: guiderAllService
-  version: "1.0.0"
-  configFilname: xxxx.json # 配置文件名称
+  group: gas # 配置中心group
+  region: dx # 配置中心区域
+  serviceName: image-detect # 服务名
+  projectName: guiderAllService # 配置项目名称
+  version: "1.0.0" # 配置版本号
+  configFilname: xxxx.json # 缺省值，默认根据kind 对应配置中心特定配置文件: 如webgate的配置文件
   creationTimestamp: null
-  name: my-api-schema
+  name: my-api-schema # 生成配置文件名
 spec:
   request:
     paramters:
       properties:
+        # 以下为用户自定义的请求参数，可根据需求定义修改
         vcn: 
           description: "a word that xxx"
           type: string
