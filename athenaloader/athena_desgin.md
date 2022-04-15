@@ -56,7 +56,7 @@ class Api(base.BaseASEApi):
 
 ```
 
-[wrapper_new](wrapper/wrapper_new.py)
+完整例子: [wrapper_new](wrapper/wrapper_new.py)
 
 
 ## 命令行工具[asectl]设计
