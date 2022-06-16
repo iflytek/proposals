@@ -1,25 +1,9 @@
 import sys
-import base
 
 
 if not hasattr(sys, 'argv'):
     sys.argv  = ['']
 
-
-'''
-API定义,定义用户期望的api输入输出
-asectl工具将扫描python此处BaseASEApi继承类生成openapi
-'''
-class Api(base.BaseASEApi):
-	def request(self):
-	    param1 = base.Arg("param1", int, "user param1", max=10, min=11, required=True )
-	    param2 = base.Arg("param2", str, "user param2", required=True )
-	    param3 = base.Arg("param3", str, "user param3", required=False )
-
-    def response(self):
-        param1 = base.Arg("param1", int, "user param1", max=10, min=11, required=True )
-        param2 = base.Arg("param2", str, "user param2", required=True )
-        param3 = base.Arg("param3", str, "user param3", required=False )
 
 '''
 服务初始化
@@ -86,4 +70,6 @@ def wrapperDestroy(handle: str) -> int:
 def wrapperError(ret:int)->str:
     if ret==100:
         return "this is a tese error return"
-    return "
+    return ""
+
+

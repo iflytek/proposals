@@ -68,4 +68,4 @@ def wrapperDestroy(handle: str) -> int:
 def wrapperError(ret:int)->str:
     if ret==100:
         return "this is a tese error return"
-    return "
+    return ""
